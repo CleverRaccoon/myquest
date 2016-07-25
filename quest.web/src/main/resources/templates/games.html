@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <h1>My Quest!</h1>
+    <p>Resize the browser window to see the effect.</p>
+
+    <p>Date from: <input type="text" id="dateFrom"/></p>
+    <p>Date to: <input type="text" id="dateTo"/></p>
+    <p>Type: <input type="text" id="type"/></p>
+    <C type="button" class="btn btn-default" id="gameFilter">Найти</C>
+    <script>
+  $(function() {
+    $( "#dateFrom" ).datepicker();
+    $( "#dateTo" ).datepicker();
+  });
+  </script>
+    <div class="row">
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"></h4> <!-- th:text = "${model.questName}" -->
+            </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Want to play</button>
+                <td>
+                    <a id="guestPlay" class="btn btn-default" href="/ord?game="
+                       th:attr="href=@{/register}"><span>play</span></a>
+                </td>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

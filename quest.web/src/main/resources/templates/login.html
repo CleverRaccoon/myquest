@@ -1,0 +1,43 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Lucid Login Form A Flat Responsive widget Template :: w3layouts</title>
+<!-- For-Mobile-Apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Lucid Login Form Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+
+<!-- //For-Mobile-Apps -->
+<!-- Style --> <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+</head>
+<body>
+<div class="container">
+<h1></h1>
+	<div class="signin">
+     	<form th:action="@{/login}" method="post">
+			<div th:if="${param.error}">
+				<p th:text="${error}"></p>
+			</div>
+	      	<input type="text" class="user" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'rachelgreen';}" />
+	      	<input type="password" class="pass" name="password"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" />
+	      	<label>
+		  		<input type="checkbox" value="Remember-Me" /> Remember Me?
+		  	</label>
+          	<input type="submit" value="LOGIN" />
+	 	</form>
+		<br></br>
+		<a class = "submit"  href="/register" th:attr="href=@{/register}"> REGISTER </a>
+	</div>
+</div>
+</body>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+</html>
